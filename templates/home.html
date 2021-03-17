@@ -1,0 +1,33 @@
+{% extends 'converter.html' %}
+
+{% block content %}
+
+
+<form class="currency-form" action="/converter" >
+    <div class="form-group">
+      <label for="from-currency">Converting from</label>
+      <input type="text" name="from-currency" class="form-control" id="formGroupExampleInput" placeholder="Currency">
+    </div>
+    <div class="form-group">
+      <label for="to-currency">Converting to </label>
+      <input type="text" name="to-currency" class="form-control" id="formGroupExampleInput2" placeholder="New currency to convert">
+    </div>
+    <div class="form-group">
+      <label for="amount-currency">Amount</label>
+      <input type="number" name="amount-currency" class="form-control" id="formGroupExampleInput3" placeholder="Amount">
+    </div>
+    <button type="submit" name="submit" class="btn btn-primary">Convert</button>
+</form>
+
+<div class="alert alert-success" role="alert" id="results">
+    <h4 class="alert-heading">Your converted currency is:</h4>
+    <p>
+        <div class="result">
+            <p>{{convert}}</p>
+        </div></p>
+    <hr>
+    <p class="mb-0"></p>
+  </div>
+  
+
+{% endblock %}
