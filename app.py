@@ -22,7 +22,8 @@ def convert_currency():
     validation = currency_help.validate(to=to_currency,frm=from_currency,amount=amount_currency)
     for val in validation:
         if validation[val][0] == False:
-            display_help.display_error(error=validation[val][1],preface="There was an error with your submission:",postface="Please try again.")
+            error = display_help.display_error(error=validation[val][1],preface="There was an error with your submission:",postface="Please try again.")
+
             return redirect("/")
     result= currency_help.convert(frm=from_currency, to=to_currency, amount=amount_currency)
     return render_template('home.html', convert=result)
