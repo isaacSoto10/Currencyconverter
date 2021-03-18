@@ -26,5 +26,5 @@ def convert_currency():
 
             return redirect("/")
     result= currency_help.convert(frm=from_currency, to=to_currency, amount=amount_currency)
-    return render_template('home.html', convert=result)
+    return render_template('home.html', convert=result, result=True)
 
